@@ -1,0 +1,4 @@
+<FilesMatch ~ "\.(exe|zip)$">
+  Order allow,deny
+  Deny from all
+</FilesMatch>

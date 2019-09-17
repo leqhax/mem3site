@@ -1,0 +1,1700 @@
+@font-face {font-family: "Monad";src: url("../fonts/Monad.otf");}
+@font-face {font-family: "Roboto-Regular";src: url("../fonts/Roboto-Regular.ttf");}
+@font-face {font-family: "Roboto-Light";src: url("../fonts/Roboto-Light.ttf");}
+@font-face {font-family: "Roboto-Thin";src: url("../fonts/Roboto-Thin.ttf");}
+
+::selection{
+    background-color: #292631;
+    color: #e63336;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+    outline: 0;
+    text-decoration: none;
+    box-sizing: border-box;
+}
+a{
+    color: inherit;
+}
+*:active, *:hover, *:focus { outline: 0!important; }
+
+body{
+    font-family: 'Roboto-Light';
+}
+
+.alerts{
+    position: fixed;
+    top: 0;
+    left: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    z-index: 11;
+}
+    .alerts .alert{
+        margin-bottom: 10px;
+        background-color: black;
+        color: white;
+        padding: 20px;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+    }
+    .alerts .alert.danger{
+        background-color: #e74c3c;
+    }
+    .alerts .alert.success{
+        background-color: #2ecc71;
+    }
+        .alerts .alert p{
+            font-size: 20px;
+        }
+        .alerts .alert i{
+            font-size: 30px;
+            margin-right: 10px;
+        }
+
+.container{
+
+}
+.content{
+    min-width: 1200px;
+    width: 1200px;
+    margin: 0 auto;
+}
+.header-openmenu{
+    display: none;
+    z-index: 10;
+    position: fixed;
+    left: 0;
+    top: 0;
+    margin: 10px 0 0 10px;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    font-size: 25px;
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    background-color: #e63336;
+    color: white;
+    cursor: pointer;
+    transform: rotate(0deg);
+    transition: .5s color, .5s background-color, .5s transform;
+}
+
+header{
+    position: absolute;
+    width: 100%;
+    height: 115px;
+    top: 0;
+    left: 0;
+    background-color: #292631;
+}
+header .content{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    padding: 0;
+}
+header .content .logo{
+    margin: auto;
+    margin-left: 0;
+    font-family: 'Monad';
+    font-size: 40px;
+    letter-spacing: 0px;
+    color: white;
+}
+    header .content .logo span > span{
+        color: #e63336;
+    }
+
+
+header .content nav{
+    margin: auto;
+    margin-left: 0;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+    header .content nav ul{
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+    }
+        header .content nav ul li{
+            text-transform: uppercase;
+            margin: 0 20px;
+            color: white;
+        }
+        header .content nav ul li a{
+            position: relative;
+            padding: 10px;
+        }
+            header .content nav ul li a span{
+                position: relative;
+                z-index: 1;
+                letter-spacing: 1px;
+            }
+        header .content nav ul li a::after{
+            content: "";
+            position: absolute;
+            left: 50%;
+            bottom: 0;
+            width: 0%;
+            height: 1px;
+            background-color: #e63336;
+            transform: translateX(-50%);
+            z-index: 0;
+            transition: .2s height 0s , .2s width .2s;
+        }
+        header .content nav ul li:hover a::after{
+            transition: .2s width 0s , .2s height .2s;
+            width: 100%;
+            height: 100%;
+        }
+        header .content nav ul li.active a::after{
+            width: 100%;
+            transition: .2s height;
+        }
+        header .content nav ul li.active:hover a::after{
+            transition: .2s height;
+        }
+
+    header .content .auth{
+        margin-right: 0;
+        display: flex;
+        flex-direction: row;
+        height: 100%;
+    }
+        header .content .auth a{
+            color: white;
+            height: 50%;
+            padding: 0 20px;
+            margin: auto;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            position: relative;
+            cursor: pointer;
+        }
+        header .content .auth a span{
+            position: relative;
+            z-index: 1;
+        }
+        header .content .auth a::after{
+            content: "";
+            position: absolute;
+            z-index: 0;
+            left: 50%;
+            top: 50%;
+            width: 100%;
+            height: 100%;
+            transform: translate(-50%, -50%) scale(0);
+            background-color: #e63336;
+            border-radius: 10px;
+        }
+        header .content .auth a:hover::after{
+            transform: translate(-50%, -50%) scale(1);
+            transition: .25s transform 0s, .25s border-radius .25s;
+            border-radius: 0;
+        }
+        header .content .auth a:hover{
+
+        }
+        header .content .auth a:first-child{
+            background-color: transparent;
+        }
+        header .content .auth a:last-child{
+            background-color: rgba(0,0,0,0.2);
+        }
+
+
+nav{
+
+}
+
+main{
+
+}
+
+    main .page{
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-attachment: fixed;
+        padding: 100px 0;
+    }
+    main .page-main{
+        margin-top: 115px;
+        background-image: url('/main/images/background-1.png');
+        padding: 200px 0;
+    }
+    main .page-advantages{
+        background-image: url('/main/images/background-2.png');
+    }
+    main .page-functional{
+        background-image: url('/main/images/background-3.png');
+    }
+    main .page-payment{
+        padding: 200px 0;
+        background-image: url('/main/images/background-4.png');
+    }
+
+    main .content{
+        color: white;
+    }
+        main .content > h1{
+            text-align: center;
+            font-size: 50px;
+            margin-bottom: 50px;
+            font-family: 'Roboto-Light';
+        }
+        main .content > span{
+            font-size: 18px;
+            font-family: 'Roboto-Thin';
+            margin-bottom: 45px;
+        }
+        main .content .stats{
+            margin-bottom: 75px;
+        }
+            main .content .stats > div{
+                margin: 0 20px;
+            }
+            main .content .stats i{
+                font-size: 50px;
+                margin-right: 10px;
+            }
+            main .content .stats span{
+                font-size: 19px;
+                text-transform: uppercase;
+            }
+
+        main .content .button a{
+            font-size: 20px;
+            padding: 20px 45px;
+            color: white;
+            background-color: #e63336;
+            letter-spacing: 1px;
+            transition: .25s background-color, .25s color, .25s border-radius;
+        }
+            main .content .button a:hover{
+                color: #e63336;
+                background-color: white;
+                border-radius: 5px;
+            }
+
+    main .content hr{
+        width: 25%;
+        height: 2px;
+        background-color: white;
+        border: 0;
+        margin-bottom: 100px;
+    }
+        main .content .advantages .block{
+            width: 33%;
+            margin-bottom: 45px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+            main .black h1{
+                color: #292631;
+            }
+            main .black hr{
+                background-color: #292631;
+            }
+            main .content .advantages .block .logo{
+                width: 128px;
+                height: 128px;
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+                justify-content: center;
+                font-size: 50px;
+                border-radius: 50%;
+                background-color: rgba(41, 38, 49, 0.2);
+                color: #ffffff;
+                margin-bottom: 15px;
+            }
+            main .content .advantages .block .logo:hover{
+                cursor: none;
+                transition: .25s background-color;
+                background-color: #e63336;
+                animation: 2s advantages cubic-bezier(0.65, 0.05, 0.36, 1) infinite;
+            }
+            main .content .advantages .block p{
+                color: #292631;
+                font-size: 25px;
+                font-family: 'Roboto-Regular';
+                margin-bottom: 15px;
+            }
+            main .content .advantages .block span{
+                text-align: center;
+                color: rgba(41, 38, 49, 0.9);
+                font-size: 17px;
+            }
+
+    main .content .functional{
+        width: 100%;
+    }
+        main .content .functional .block{
+            margin: 20px 10px;
+            width: 200px;
+            height: 50px;
+            background-color: transparent;
+            padding: 10px 20px;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: .2s background-color;
+            position: relative;
+            border-width: 1px 0 1px 0;
+            border-style: solid;
+            border-color: white;
+            transition: .3s border-color;
+            overflow: hidden;
+        }
+        main .content .functional .block span{
+            font-size: 20px;
+            position: relative;
+            z-index: 1;
+            color: white;
+            transition: 0.3s color;
+        }
+        main .content .functional .block .hover .line{
+            top: 0;
+            width: calc(20% + 1px);
+            position: absolute;
+            z-index: 0;
+            height: 100%;
+            background-color: white;
+            transform-origin: bottom;
+            transform: scaleY(0);
+            transition: .3s transform, .3s background-color .3s;
+        }
+        main .content .functional .block .hover .line:nth-child(1){left: 0;     transition-delay:   .2s;}
+        main .content .functional .block .hover .line:nth-child(2){left: 20%;   transition-delay:   .1s;}
+        main .content .functional .block .hover .line:nth-child(3){left: 40%;   transition-delay:   0s;}
+        main .content .functional .block .hover .line:nth-child(4){left: 60%;   transition-delay:   .1s;}
+        main .content .functional .block .hover .line:nth-child(5){left: 80%;   transition-delay:   .2s;}
+
+        main .content .functional .block.active .hover .line, main .content .functional .block:hover .hover .line{
+            transform: scaleY(1);
+            background-color: #e63336;
+        }
+        main .content .functional .block.active{
+            cursor: default;
+        }
+        main .content .functional .block.active, main .content .functional .block:hover{
+            border-color: #e63336;
+        }
+
+    main .content .items{
+        height: 500px;
+        width: 100%;
+        position: relative;
+        margin: 25px 0;
+    }
+    main .content .items .item{
+        width: auto;
+        height: 100%;
+        display: flex;
+        flex-direction: row;
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%) scale(0.2);
+        opacity: 0;
+        overflow: hidden;
+        visibility: hidden;
+        transition: 1s cubic-bezier(0.65, 0.05, 0.36, 1) all;
+    }
+        main .content .items .item img{
+            height: 100%;
+            margin: auto;
+        }
+    main .content .items .item.active{
+        visibility: visible;
+        transform: translateY(-50%) scale(1);
+        opacity: 1;
+        top: 50%;
+    }
+    main .content .items .item .logo{
+        margin: auto 10px;
+        font-size: 100px;
+    }
+    main .content .items .item .subject{
+        margin: auto 25px;
+    }
+        main .content .items .item .subject p{
+            font-family: 'Roboto-Regular';
+            font-size: 20px;
+            margin-bottom: 5px;
+            letter-spacing: 1px;
+        }
+        main .content .items .item .subject span{
+            font-size: 14px;
+            color: white;
+            white-space: pre-wrap;
+        }
+    main .content .items .item .description{
+        font-family: 'Roboto-Thin';
+    }
+
+
+    main .content .payment{
+        color: #292631;
+    }
+        main .content .payment .block{
+            margin: 25px 0;
+            text-align: center;
+        }
+            main .content .payment .block p{
+                font-size: 30px;
+                font-family: 'Roboto-Regular';
+                text-align: center;
+                margin-bottom: 10px;
+            }
+            main .content .payment .block > span{
+                font-size: 20px;
+                color: white;
+                background-color: #292631;
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+                justify-content: center;
+                border-radius: 10px;
+                min-width: 100px;
+                height: 75px;
+            }
+            main .content .payment .block .select{
+                display: flex;
+                flex-direction: row;
+                align-items: stretch;
+                justify-content: center;
+            }
+                main .content .payment .block .select .option{
+                    background-color: #292631;
+                    color: white;
+                    min-width: 100px;
+                    display: flex;
+                    flex-direction: row;
+                    align-items: center;
+                    justify-content: center;
+                    height: 100px;
+                    font-size: 30px;
+                    position: relative;
+                    transform: translateY(0);
+                    transition: .25s background-color, .25s transform;
+                    cursor: pointer;
+                    padding: 10px 20px;
+                }
+                main .content .payment .block .select .option:hover{
+                    background-color: rgba(100, 134, 244, 0.75);
+                    transform: translateY(-5px);
+                }
+                main .content .payment .block .select .option.active{
+                    background-color: rgba(100, 134, 244, 1);
+                    transform: translateY(-10px);
+                }
+                main .content .payment .block .select .option:first-child{
+                    border-top-left-radius: 10px;
+                    border-bottom-left-radius: 10px;
+                }
+                main .content .payment .block .select .option:last-child{
+                    border-top-right-radius: 10px;
+                    border-bottom-right-radius: 10px;
+                }
+                    main .content .payment .block .select .option span{
+
+                    }
+            main .content .payment .block .checkbox{
+                width: 60px;
+                height: 60px;
+                position: relative;
+                margin: auto;
+            }
+                main .content .payment .block .checkbox input[type="checkbox"] {
+                    display: none;
+                }
+                main .content .payment .block .checkbox input:checked + .custom-checkbox {
+                    background-color: #e63336;
+                    border-radius: 0%;
+                }
+                main .content .payment .block .checkbox input:checked + .custom-checkbox i{
+                    transform: translate(-50%, -50%) rotate(0deg);
+                }
+                main .content .payment .block .checkbox .custom-checkbox {
+                    width: 100%;
+                    height: 100%;
+                    transition: background-color .5s cubic-bezier(0.65, 0.05, 0.36, 1), border-radius .5s cubic-bezier(0.65, 0.05, 0.36, 1);
+                    border-radius: 50%;
+                    background-color: #292631;
+                    position: relative;
+                    overflow: hidden;
+                    cursor: pointer;
+                    display: flex;
+                    flex-direction: row;
+                    align-items: center;
+                    justify-content: center;
+                }
+                main .content .payment .block .checkbox .custom-checkbox i{
+                    position: absolute;
+                    left: 50%;
+                    top: 50%;
+                    text-align: center;
+                    color: white;
+                    font-size: 30px;
+                    display: flex;
+                    flex-direction: row;
+                    align-items: center;
+                    justify-content: center;
+                    transform: translate(-50%, 100%) rotate(45deg);
+                    transition: transform .5s cubic-bezier(0.65, 0.05, 0.36, 1);
+                    margin: auto;
+                }
+
+        main .content .payment .block a#payment{
+            width: 300px;
+            height: 100px;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: center;
+            background-color: #292631;
+            margin-top: 50px;
+            font-size: 30px;
+            color: white;
+            transition: .25s background-color;
+        }
+        main .content .payment .block a#payment:hover{
+            background-color: #e63336;
+        }
+
+footer{
+    width: 100%;
+    height: 115px;
+    background-color: #292631;
+    color: white;
+}
+
+    footer .content{
+        height: 100%;
+    }
+    footer .content .block{
+        margin-right: 30px;
+    }
+    footer .content .block.community{
+        margin: auto;
+        margin-right: 0;
+    }
+    footer .content .block.community .cm-logo{
+        width: 75px;
+        height: 75px;
+        background-color: #e63336;
+        border-radius: 50%;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        font-size: 35px;
+        transition: .25s background-color, .25s color;
+    }
+    footer .content .block.community .cm-logo:hover{
+        background-color: white;
+        color: #e63336;
+    }
+        footer .content .block > p{
+            font-size: 24px;
+            font-family: 'Monad';
+            letter-spacing: 1px;
+        }
+        footer .content .block > span{
+            font-size: 18px;
+        }
+        footer .content .block span > span{
+            color: #e63336;
+        }
+        footer .content .block #ps{cursor: pointer;}
+
+
+body.popup, body.focus{
+    overflow: hidden;
+}
+.popup-window{
+    position: fixed;
+    left: 0;
+    top: 0;
+    z-index: 10;
+    visibility: hidden;
+    background-color: rgba(0,0,0,0.5);
+    min-width: 100%;
+    min-height: 100%;
+    max-width: 100%;
+    max-height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    overflow-y: hidden;
+    transition: .5s opacity, 0s visibility .5s;
+    opacity: 0;
+}
+    body.popup .popup-window.active{
+        transition: .5s opacity, 0s visibility 0s;
+        overflow-y: scroll;
+        visibility: visible;
+        opacity: 1;
+    }
+    .popup-window .window{
+        width: 500px;
+        background-color: white;
+        margin: auto;
+    }
+    .popup-window .fa-times{
+        position: absolute;
+        right: 0;
+        top: 0;
+        font-size: 50px;
+        width: 100px;
+        height: 100px;
+        border-radius: 50%;
+        background-color: #e63336;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        color: white;
+        cursor: pointer;
+        transition: .2s border-radius;
+    }
+    .popup-window .fa-times:hover{
+        border-radius: 0%;
+    }
+    .popup-window .subject{
+        font-size: 30px;
+        margin: 50px 0;
+        text-align: center;
+        width: 100%;
+        font-family: 'Roboto-Regular';
+        color: #e63336;
+    }
+    .popup-window form{
+        position: relative;
+        padding: 25px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .popup-window .block form{
+
+    }
+    .popup-window form label{
+        margin-bottom: 20px;
+        position: relative;
+    }
+    .popup-window form input{
+        background-color: transparent;
+        position: relative;
+        z-index: 1;
+        border-width: 0 1px 0 1px;
+        border-style: solid;
+        border-color: #e63336;
+        color: #e63336;
+        padding: 20px 30px;
+        font-size: 25px;
+        font-family: 'Roboto-Light';
+        transition: .2s background-color, .2s color;
+    }
+    .popup-window form input.active{
+        color: white;
+    }
+    .popup-window form input::placeholder{
+        color: #e63336;
+        font-size: 16px;
+    }
+    .popup-window form label .lines{
+    }
+    .popup-window form label .lines .line{
+        position: absolute;
+        height: calc(10% + 1px);
+        width: 100%;
+        z-index: 0;
+        background-color: #e63336;
+        transform: scaleX(0);
+        transform-origin: left;
+        transition: .5s transform;
+    }
+    .popup-window form label .lines .line:nth-child(1){top: 0%; transition-delay: 0s;}
+    .popup-window form label .lines .line:nth-child(2){top: 10%;transition-delay: .05s;}
+    .popup-window form label .lines .line:nth-child(3){top: 20%;transition-delay: .1s;}
+    .popup-window form label .lines .line:nth-child(4){top: 30%;transition-delay: .15s;}
+    .popup-window form label .lines .line:nth-child(5){top: 40%;transition-delay: .2s;}
+    .popup-window form label .lines .line:nth-child(6){top: 50%;transition-delay: .25s;}
+    .popup-window form label .lines .line:nth-child(7){top: 60%;transition-delay: .3s;}
+    .popup-window form label .lines .line:nth-child(8){top: 70%;transition-delay: .35s;}
+    .popup-window form label .lines .line:nth-child(9){top: 80%;transition-delay: .4s;}
+    .popup-window form label .lines .line:nth-child(10){top: 90%;transition-delay: .45s;}
+
+    .popup-window form label input.active ~ .lines .line{
+        transform: scaleX(1);
+    }
+    .popup-window form button{
+        height: 75px;
+        padding: 0 50px;
+        border-radius: 20px;
+        border: 1px solid #e63336;
+        color: #e63336;
+        background-color: transparent;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        font-family: 'Roboto-Light';
+        font-size: 30px;
+        margin: 10px 0;
+        transition: .2s background-color, .2s color;
+        cursor: pointer;
+        overflow: hidden;
+        position: relative;
+    }
+    .popup-window form button:hover, .popup-window form button:focus{
+        background-color: #e63336;
+        color: white;
+        animation: 2s advantages cubic-bezier(0.65, 0.05, 0.36, 1) infinite;
+    }
+    .popup-window form button i{
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%,-100%) rotate(0deg);
+        visibility: hidden;
+        z-index: 0;
+        opacity: 0;
+        transition: 0s visibility .5s, .5s transform, .5s opacity;
+    }
+    .popup-window form button p{
+        position: relative;
+        z-index: 1;
+        visibility: visible;
+    }
+    .popup-window form button.stop i{
+        transition: visibility 0s, .5s transform, .5s opacity;
+        opacity: 1;
+        visibility: visible;
+        transform: translate(-50%,-50%) rotate(360deg);
+        animation: 1s button-rotate linear infinite;
+    }
+    .popup-window form button.stop p{
+        visibility: hidden;
+    }
+
+
+
+.flex{display: flex;}
+.flex.column{flex-direction: column;}
+.flex.row{flex-direction: row;}
+.flex.justify-center{justify-content: center;}
+.flex.justify-around{justify-content: space-around;}
+.flex.justify-between{justify-content: space-between;}
+.flex.align-center{align-items: center;}
+.flex.align-start{align-items: flex-start;}
+.flex.align-end{align-items: flex-end;}
+.flex.wrap{flex-wrap: wrap;}
+
+@keyframes advantages {
+    0%{
+        box-shadow: 0 0 0 0px #e63336;
+    }
+    100%{
+        box-shadow: 0 0 0 25px transparent;
+    }
+}
+
+@media (min-width: 1200px) {
+    .content{
+        min-width: 1200px;
+        width: 1200px;
+    }
+    header{
+        height: 115px;
+    }
+        header .content .logo{
+            font-size: 40px;
+        }
+        header .content nav ul li{
+            margin: 0 20px;
+        }
+        header .content nav ul li a{
+            padding: 10px;
+        }
+        header .content .auth a{
+            padding: 0 20px;
+        }
+}
+@media (min-width: 992px) and (max-width: 1199px) {
+    .content{
+        min-width: 100%;
+        padding: 0 5%;
+        width: 100%;
+    }
+    header{
+        padding: 0 5%;
+        height: 100px;
+    }
+        header .content .logo{font-size: 35px;}
+        header .content nav ul li{margin: 0 10px;}
+        header .content nav ul li a{padding: 10px;}
+        header .content .auth a{padding: 0 20px;}
+
+
+    main .page{
+        background-attachment: fixed;
+        padding: 100px 0;
+    }
+    main .page-main{
+        margin-top: 100px;
+        padding: 150px 0;
+    }
+        main .content > h1{
+            font-size: 50px;
+            margin-bottom: 40px;
+        }
+        main .content > span{
+            font-size: 18px;
+            margin-bottom: 40px;
+        }
+        main .content .stats{margin-bottom: 75px;}
+            main .content .stats > div{margin: 0 15px;}
+            main .content .stats i{
+                font-size: 40px;
+                margin-right: 10px;
+            }
+            main .content .stats span{font-size: 18px}
+        main .content .button a{
+            font-size: 20px;
+            padding: 20px 40px;
+        }
+    main .content hr{
+        width: 30%;
+        height: 2px;
+        margin-bottom: 75px;
+    }
+        main .content .advantages .block{
+            width: 33%;
+            margin-bottom: 30px;
+        }
+            main .content .advantages .block .logo{
+                width: 110px;
+                height: 110px;
+                font-size: 50px;
+                color: #ffffff;
+                margin-bottom: 15px;
+            }
+            main .content .advantages .block p{
+                font-size: 20px;
+                margin-bottom: 10px;
+            }
+            main .content .advantages .block span{font-size: 16px;}
+        main .content .functional .block{
+            margin: 10px;
+            width: 200px;
+            height: 50px;
+            padding: 10px 20px;
+        }
+        main .content .functional .block span{font-size: 18px;}
+    main .content .items{height: 400px;margin: 25px 0;}
+    main .content .items .item{
+        width: auto;
+        height: 100%;
+    }
+    main .content .items .item .logo{
+        margin: auto 10px;
+        font-size: 70px;
+    }
+    main .content .items .item .subject{margin: auto 20px;}
+        main .content .items .item .subject p{
+            font-size: 16px;
+            margin-bottom: 5px;
+            letter-spacing: 1px;
+        }
+        main .content .items .item .subject span{font-size: 13px;}
+        main .content .items .item .description{font-size: 15px;}
+
+    main .page-payment{
+        padding: 150px 0;
+    }
+        main .content .payment .block{
+            margin: 20px 0;
+        }
+            main .content .payment .block p{
+                font-size: 35px;
+                margin-bottom: 10px;
+            }
+            main .content .payment .block > span{
+                font-size: 20px;
+                border-radius: 10px;
+                min-width: 100px;
+                height: 100px;
+            }
+            main .content .payment .block .select{
+                display: flex;
+                flex-direction: row;
+                align-items: stretch;
+                justify-content: center;
+            }
+                main .content .payment .block .select .option{
+                    min-width: 75px;
+                    display: flex;
+                    flex-direction: row;
+                    align-items: center;
+                    justify-content: center;
+                    height: 100px;
+                    font-size: 30px;
+                    position: relative;
+                    padding: 10px 20px;
+                }
+                main .content .payment .block .select .option:first-child{
+                    border-top-left-radius: 10px;
+                    border-bottom-left-radius: 10px;
+                }
+                main .content .payment .block .select .option:last-child{
+                    border-top-right-radius: 10px;
+                    border-bottom-right-radius: 10px;
+                }
+
+        main .content .payment .block a#payment{
+            width: 250px;
+            height: 80px;
+            margin-top: 40px;
+            font-size: 30px;
+        }
+
+
+    footer{height: 100px;}
+        footer .content .block{margin-right: 30px;}
+        footer .content .block.community .cm-logo{
+            width: 70px;
+            height: 70px;
+            font-size: 30px;
+        }
+            footer .content .block > p{
+                font-size: 24px;
+                letter-spacing: 1px;
+            }
+            footer .content .block > span{font-size: 18px;}
+
+
+    .popup-window{background-color: rgba(0,0,0,0.5);}
+        .popup-window .window{width: 500px;}
+        .popup-window .fa-times{
+            font-size: 50px;
+            width: 100px;
+            height: 100px;
+        }
+        .popup-window .subject{
+            font-size: 30px;
+            margin: 50px 0;
+        }
+        .popup-window form{padding: 25px;}
+        .popup-window form label{margin-bottom: 20px;}
+        .popup-window form input{
+            padding: 20px 30px;
+            font-size: 25px;
+        }
+        .popup-window form input::placeholder{font-size: 18px;}
+        .popup-window form button{
+            height: 75px;
+            padding: 0 50px;
+            border-radius: 20px;
+            font-size: 30px;
+            margin: 10px 0;
+        }
+}
+@media (min-width: 768px) and (max-width: 991px) {
+    .content{
+        min-width: 100%;
+        padding: 0 5%;
+        width: 100%;
+    }
+
+    .header-openmenu{
+        display: flex;
+        font-size: 30px;
+        width: 75px;
+        height: 75px;
+
+    }
+        body.focus .header-openmenu{
+            z-index: 10;
+            background-color: white;
+            color: #e63336;
+            transform: rotate(90deg);
+        }
+    header{
+        padding: 5%;
+        height: 100%;
+        position: fixed;
+        left: 0;
+        top: 0;
+        max-height: 100%;
+        overflow-y: scroll;
+        visibility: hidden;
+        z-index: 9;
+        transform: translateY(-100%);
+        transition: 1s transform, 0s visibility 1s;
+    }
+        body.focus header{
+            transition: 1s transform, 0s visibility 0s;
+            visibility: visible;
+            transform: translateY(0%);
+        }
+        header .content{
+            flex-direction: column;
+        }
+        header .content .logo{margin: 0 auto;font-size: 50px;margin-bottom: 20px;}
+        header .content nav{margin: auto 0;margin-bottom: 20px;display: block;}
+        header .content nav ul{flex-direction: column;}
+        header .content nav ul li{margin: 35px 0;font-size: 20px;}
+        header .content nav ul li a{padding: 30px 20px;}
+        header .content .auth{margin: 0;height: 50%;}
+        header .content .auth a{
+            width: 100px;
+            height: 100px;
+            margin: auto;
+            margin-bottom: 0;
+            text-align: center;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: center;
+        }
+
+
+    main .page{
+        background-attachment: fixed;
+        padding: 75px 0;
+    }
+    main .page-main{
+        margin-top: 0;
+        padding: 100px 0;
+    }
+        main .content > h1{
+            font-size: 40px;
+            margin-bottom: 30px;
+        }
+        main .content > span{
+            font-size: 16px;
+            margin-bottom: 30px;
+        }
+        main .content .stats{margin-bottom: 60px;}
+            main .content .stats > div{margin: 0 10px;}
+            main .content .stats i{
+                font-size: 40px;
+                margin-right: 10px;
+            }
+            main .content .stats span{font-size: 16px}
+        main .content .button a{
+            font-size: 20px;
+            padding: 20px 40px;
+        }
+    main .content hr{
+        width: 30%;
+        height: 2px;
+        margin-bottom: 60px;
+    }
+        main .content .advantages .block{
+            width: 33%;
+            margin-bottom: 25px;
+        }
+            main .content .advantages .block .logo{
+                width: 100px;
+                height: 100px;
+                font-size: 45px;
+                color: #ffffff;
+                margin-bottom: 15px;
+            }
+            main .content .advantages .block p{
+                font-size: 18px;
+                margin-bottom: 5px;
+            }
+            main .content .advantages .block span{font-size: 14px;}
+        main .content .functional .block{
+            margin: 10px;
+            width: 175px;
+            height: 50px;
+        }
+        main .content .functional .block span{font-size: 18px;}
+    main .content .items{height: 350px;margin: 20px 0;}
+    main .content .items .item{
+        width: auto;
+        height: 100%;
+    }
+    main .content .items .item .logo{
+        margin: auto 10px;
+        font-size: 60px;
+    }
+    main .content .items .item .subject{margin: auto 15px;}
+        main .content .items .item .subject p{
+            font-size: 14px;
+            margin-bottom: 2px;
+            letter-spacing: 1px;
+        }
+        main .content .items .item .subject span{font-size: 12px;}
+        main .content .items .item .description{font-size: 14px;}
+
+    main .page-payment{
+        padding: 100px 0;
+    }
+        main .content .payment .block{
+            margin: 30px 0;
+        }
+            main .content .payment .block p{
+                font-size: 35px;
+                margin-bottom: 10px;
+            }
+            main .content .payment .block > span{
+                font-size: 20px;
+                border-radius: 10px;
+                min-width: 100px;
+                height: 75px;
+            }
+            main .content .payment .block .select{
+                display: flex;
+                flex-direction: row;
+                align-items: stretch;
+                justify-content: center;
+            }
+                main .content .payment .block .select .option{
+                    min-width: 75px;
+                    display: flex;
+                    flex-direction: row;
+                    align-items: center;
+                    justify-content: center;
+                    height: 100px;
+                    font-size: 30px;
+                    position: relative;
+                    padding: 10px 20px;
+                }
+                main .content .payment .block .select .option:first-child{
+                    border-top-left-radius: 10px;
+                    border-bottom-left-radius: 10px;
+                }
+                main .content .payment .block .select .option:last-child{
+                    border-top-right-radius: 10px;
+                    border-bottom-right-radius: 10px;
+                }
+
+        main .content .payment .block a#payment{
+            width: 250px;
+            height: 80px;
+            margin-top: 40px;
+            font-size: 30px;
+        }
+
+
+    footer{height: 100px;}
+        footer .content .block{margin-right: 20px;}
+        footer .content .block.community .cm-logo{
+            width: 70px;
+            height: 70px;
+            font-size: 30px;
+        }
+            footer .content .block > p{
+                font-size: 22px;
+                letter-spacing: 1px;
+            }
+            footer .content .block > span{font-size: 16px;}
+
+
+    .popup-window{background-color: rgba(0,0,0,0.75);}
+        .popup-window .window{width: 80%;}
+        .popup-window .fa-times{
+            font-size: 40px;
+            width: 75px;
+            height: 75px;
+        }
+        .popup-window .subject{
+            font-size: 30px;
+            margin: 50px 0;
+        }
+        .popup-window form{padding: 25px;}
+        .popup-window form label{margin-bottom: 20px;}
+        .popup-window form input{
+            padding: 20px 30px;
+            font-size: 25px;
+        }
+        .popup-window form input::placeholder{font-size: 18px;}
+        .popup-window form button{
+            height: 75px;
+            padding: 0 50px;
+            border-radius: 20px;
+            font-size: 30px;
+            margin: 10px 0;
+        }
+}
+@media (max-width: 767px) {
+    .content{
+        min-width: 100%;
+        padding: 0 4%;
+        width: 100%;
+    }
+
+    .header-openmenu{
+        display: flex;
+        font-size: 25px;
+        width: 60px;
+        height: 60px;
+    }
+        body.focus .header-openmenu{
+            z-index: 10;
+            background-color: white;
+            color: #e63336;
+            transform: rotate(90deg);
+        }
+    header{
+        padding: 4%;
+        height: 100%;
+        position: fixed;
+        left: 0;
+        top: 0;
+        max-height: 100%;
+        overflow-y: scroll;
+        visibility: hidden;
+        z-index: 9;
+        transform: translateY(-100%);
+        transition: 1s transform, 0s visibility 1s;
+    }
+        body.focus header{
+            transition: 1s transform, 0s visibility 0s;
+            visibility: visible;
+            transform: translateY(0%);
+        }
+        header .content{
+            flex-direction: column;
+            min-height: 100%;
+            height: auto;
+        }
+        header .content .logo{margin: 0 auto;font-size: 50px;margin-bottom: 10px;}
+        header .content nav{margin: auto 0;margin-bottom: 20px;display: block;}
+        header .content nav ul{flex-direction: column;}
+        header .content nav ul li{margin: 35px 0;font-size: 20px;}
+        header .content nav ul li a{padding: 30px 20px;}
+        header .content .auth{margin: 0;height: 50%;}
+        header .content .auth a{
+            width: 100px;
+            height: 100px;
+            margin: auto;
+            margin-bottom: 0;
+            text-align: center;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: center;
+        }
+
+
+    main .page{
+        background-attachment: fixed;
+        padding: 60px 0;
+    }
+    main .page-main{
+        margin-top: 0;
+        padding: 75px 0;
+    }
+        main .content > h1{
+            font-size: 30px;
+            margin-bottom: 20px;
+        }
+        main .content > span{
+            font-size: 13px;
+            margin-bottom: 20px;
+        }
+        main .content .stats{margin-bottom: 60px;}
+            main .content .stats > div{margin: 0 10px;}
+            main .content .stats i{
+                font-size: 30px;
+                margin-right: 10px;
+            }
+            main .content .stats span{font-size: 12px}
+        main .content .button a{
+            font-size: 18px;
+            padding: 15px 30px;
+        }
+    main .content hr{
+        width: 30%;
+        height: 2px;
+        margin-bottom: 60px;
+    }
+        main .content .advantages .block{
+            width: 33%;
+            margin-bottom: 20px;
+        }
+            main .content .advantages .block .logo{
+                width: 90px;
+                height: 90px;
+                font-size: 40px;
+                color: #ffffff;
+                margin-bottom: 10px;
+            }
+            main .content .advantages .block p{
+                font-size: 12px;
+                margin-bottom: 5px;
+            }
+            main .content .advantages .block span{font-size: 10px;}
+        main .content .functional .block{
+            margin: 10px;
+            width: 200px;
+            height: 50px;
+        }
+        main .content .functional .block span{font-size: 18px;}
+    main .content .items{height: 250px;margin: 20px 0;}
+    main .content .items .item{
+        width: auto;
+        height: 100%;
+    }
+    main .content .items .item .logo{
+        margin: auto 5px;
+        font-size: 40px;
+    }
+    main .content .items .item .subject{margin: auto 10px;}
+        main .content .items .item .subject p{
+            font-size: 12px;
+            margin-bottom: 1px;
+            letter-spacing: 0px;
+        }
+        main .content .items .item .subject span{font-size: 10px;}
+        main .content .items .item .description{font-size: 11px;}
+
+
+    main .page-payment{
+        padding: 75px 0;
+    }
+        main .content .payment .block{
+            margin: 10px 0;
+        }
+            main .content .payment .block p{
+                font-size: 30px;
+                margin-bottom: 10px;
+            }
+            main .content .payment .block > span{
+                font-size: 20px;
+                border-radius: 10px;
+                min-width: 100px;
+                height: 75px;
+            }
+            main .content .payment .block .select{
+                display: flex;
+                flex-direction: row;
+                align-items: stretch;
+                justify-content: center;
+            }
+                main .content .payment .block .select .option{
+                    min-width: 60px;
+                    display: flex;
+                    flex-direction: row;
+                    align-items: center;
+                    justify-content: center;
+                    height: 60px;
+                    font-size: 18px;
+                    position: relative;
+                    padding: 10px 20px;
+                }
+                main .content .payment .block .select .option:first-child{
+                    border-top-left-radius: 5px;
+                    border-bottom-left-radius: 5px;
+                }
+                main .content .payment .block .select .option:last-child{
+                    border-top-right-radius: 5px;
+                    border-bottom-right-radius: 5px;
+                }
+
+        main .content .payment .block a#payment{
+            width: 200px;
+            height: 75px;
+            margin-top: 30px;
+            font-size: 20px;
+        }
+
+
+
+    footer{height: 100px;}
+        footer .content .block{margin-right: 10px;}
+        footer .content .block.community .cm-logo{
+            width: 60px;
+            height: 60px;
+            font-size: 25px;
+        }
+            footer .content .block > p{
+                font-size: 20px;
+                letter-spacing: 1px;
+            }
+            footer .content .block > span{font-size: 14px;}
+
+
+    .popup-window{background-color: rgba(0,0,0,0.8);}
+        .popup-window .window{width: 80%;}
+        .popup-window .fa-times{
+            font-size: 30px;
+            width: 60px;
+            height: 60px;
+        }
+        .popup-window .subject{
+            font-size: 25px;
+            margin: 50px 0;
+        }
+        .popup-window form{padding: 20px;}
+        .popup-window form label{margin-bottom: 10px;}
+        .popup-window form input{
+            height: 76px;
+            padding:0 30px;
+            font-size: 20px;
+        }
+        .popup-window form input::placeholder{font-size: 16px;}
+        .popup-window form button{
+            height: 60px;
+            padding: 0 35px;
+            border-radius: 15px;
+            font-size: 24px;
+            margin: 10px 0;
+        }
+}
+@media (max-width: 480px) {
+    .content{
+        min-width: 100%;
+        padding: 0 4%;
+        width: 100%;
+    }
+
+    .header-openmenu{
+        display: flex;
+        font-size: 25px;
+        width: 60px;
+        height: 60px;
+    }
+        body.focus .header-openmenu{
+            z-index: 10;
+            background-color: white;
+            color: #e63336;
+            transform: rotate(90deg);
+        }
+    header{
+        padding: 4%;
+        height: 100%;
+        position: fixed;
+        left: 0;
+        top: 0;
+        max-height: 100%;
+        overflow-y: scroll;
+        visibility: hidden;
+        z-index: 9;
+        transform: translateY(-100%);
+        transition: 1s transform, 0s visibility 1s;
+    }
+        body.focus header{
+            transition: 1s transform, 0s visibility 0s;
+            visibility: visible;
+            transform: translateY(0%);
+        }
+        header .content{
+            flex-direction: column;
+            min-height: 100%;
+            height: auto;
+        }
+        header .content .logo{margin: 0 auto;font-size: 50px;margin-bottom: 10px;}
+        header .content nav{margin: auto 0;margin-bottom: 20px;display: block;}
+        header .content nav ul{flex-direction: column;}
+        header .content nav ul li{margin: 35px 0;font-size: 20px;}
+        header .content nav ul li a{padding: 30px 20px;}
+        header .content .auth{margin: 0;height: 50%;}
+        header .content .auth a{
+            width: 100px;
+            height: 100px;
+            margin: auto;
+            margin-bottom: 0;
+            text-align: center;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: center;
+        }
+
+
+    main .page{
+        background-attachment: local!important;
+        padding: 40px 0;
+    }
+    main .page-main{
+        margin-top: 0;
+        padding: 70px 0;
+    }
+        main .content > h1{
+            font-size: 21px;
+            margin-bottom: 15px;
+        }
+        main .content > span{
+            font-size: 9px;
+            margin-bottom: 15px;
+        }
+        main .content .stats{margin-bottom: 50px;}
+            main .content .stats > div{margin: 0 10px;}
+            main .content .stats i{
+                font-size: 25px;
+                margin-right: 5px;
+            }
+            main .content .stats span{font-size: 7px;}
+        main .content .button a{
+            font-size: 16px;
+            padding: 12px 24px;
+        }
+    main .content hr{
+        width: 25%;
+        height: 1px;
+        margin-bottom: 60px;
+    }
+        main .content .advantages .block{
+            width: 33%;
+            margin-bottom: 10px;
+        }
+            main .content .advantages .block .logo{
+                width: 75px;
+                height: 75px;
+                font-size: 35px;
+                color: #ffffff;
+                margin-bottom: 5px;
+            }
+            main .content .advantages .block p{
+                font-size: 8px;
+                margin-bottom: 1px;
+            }
+            main .content .advantages .block span{font-size: 8px;}
+        main .content .functional .block{
+            margin: 5px;
+            width: 130px;
+            height: 40px;
+        }
+        main .content .functional .block span{font-size: 13px;}
+    main .content .items{width: 100%;height: 150px;margin: 15px 0;}
+    main .content .items .item{
+        width: auto;
+        height: 100%;
+    }
+    main .content .items .item .logo{
+        margin: auto 5px;
+        font-size: 20px;
+    }
+    main .content .items .item .subject{margin: auto 5px;}
+        main .content .items .item .subject p{
+            font-size: 10px;
+            margin-bottom: 0px;
+            letter-spacing: 0px;
+        }
+        main .content .items .item .subject span{font-size: 7px;}
+        main .content .items .item .description{font-size: 6px;}
+
+    main .page-payment{
+        padding: 50px 0;
+    }
+        main .content .payment .block{
+            margin: 10px 0;
+        }
+            main .content .payment .block p{
+                font-size: 20px;
+                margin-bottom: 15px;
+            }
+            main .content .payment .block > span{
+                font-size: 15px;
+                border-radius: 10px;
+                min-width: 60px;
+                height: 40px;
+            }
+            main .content .payment .block .select{
+                display: flex;
+                flex-direction: row;
+                align-items: stretch;
+                justify-content: center;
+            }
+                main .content .payment .block .select .option{
+                    min-width: 40px;
+                    display: flex;
+                    flex-direction: row;
+                    align-items: center;
+                    justify-content: center;
+                    height: 40px;
+                    font-size: 14px;
+                    position: relative;
+                    padding: 5px 10px;
+                }
+                main .content .payment .block .select .option:first-child{
+                    border-top-left-radius: 5px;
+                    border-bottom-left-radius: 5px;
+                }
+                main .content .payment .block .select .option:last-child{
+                    border-top-right-radius: 5px;
+                    border-bottom-right-radius: 5px;
+                }
+
+        main .content .payment .block a#payment{
+            width: 250px;
+            height: 80px;
+            margin-top: 40px;
+            font-size: 30px;
+        }
+
+
+
+    footer{height: 75px;}
+        footer .content .block{margin-right: 5px;}
+        footer .content .block.community .cm-logo{
+            width: 50px;
+            height: 50px;
+            font-size: 20px;
+        }
+            footer .content .block > p{
+                font-size: 14px;
+                letter-spacing: 0px;
+            }
+            footer .content .block > span{font-size: 9px;}
+
+
+    .popup-window{background-color: rgba(0,0,0,0.8);}
+        .popup-window .window{width: 90%;}
+        .popup-window .fa-times{
+            font-size: 25px;
+            width: 50px;
+            height: 50px;
+        }
+        .popup-window .subject{
+            font-size: 20px;
+            margin: 40px 0;
+        }
+        .popup-window form{padding: 20px;}
+        .popup-window form label{margin-bottom: 10px;}
+        .popup-window form input{
+            height: 68px;
+            padding: 0 20px;
+            font-size: 17px;
+        }
+        .popup-window form input::placeholder{font-size: 16px;}
+        .popup-window form button{
+            height: 50px;
+            padding: 0 25px;
+            border-radius: 10px;
+            font-size: 20px;
+            margin: 10px 0;
+        }
+}

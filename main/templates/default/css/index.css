@@ -1,0 +1,420 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto');
+
+*{
+	margin: 0px;
+	padding: 0px;
+	text-decoration: none;
+	font-family: 'Roboto' , sans-serif;
+	outline: none;
+	user-select: none;
+}
+
+a{cursor: pointer;}
+::selection{background: black;color: white;}
+
+.txt-white{color: white;}
+
+#Container{
+	/*background-color: white;*/
+}
+#Container .BoxShadow{
+	box-shadow: 0px -1px 15px 1px black;
+}
+#Container .Header{
+	width: 1230px;
+	height: 115px;
+	margin: 0px auto;
+}
+#Container .Header img{
+	top: 25px;
+	position: relative;
+	margin-right: 130px;
+}
+#Container .Header ul{
+	display: inline-block;
+	vertical-align: middle;
+}
+#Container .Header a{
+	color:black;
+}
+#Container .Header li{
+	float: left;
+	padding: 15px 0px;
+	text-transform: uppercase;
+	font-size: 22px;
+	border-bottom: 3px solid rgba(0,0,0,0);
+}
+#Container .Header .Active{
+	border-bottom: 3px solid #e11111;
+}
+#Container .Header li:hover{
+	border-bottom: 3px solid #e11111;
+}
+#Container .Header .Authorization{
+	float: right;
+	text-transform: uppercase;
+
+	line-height: 115px;
+	font-size: 23px;
+}
+#Container .Header .Authorization a{
+	padding: 25px 10px;
+	margin: 0px 5px;
+}
+#Container .Header .Authorization .Hover{
+	padding: 25px 15px;
+	background: #e11111;
+	color:white;
+}
+
+#Container .ForAbout{
+	background-image: url('/main/images/ljJzxrP.png');
+	height: 700px;
+	min-width: 1230px;
+	background-repeat: no-repeat;
+	background-position: center;
+}
+#Container .About{
+	width: 100%;
+	height: 700px;
+	margin: 0px auto;
+}
+
+#Container .AboutText{
+	width: 1230px;
+	margin: 0px auto;
+	top: 190px;
+	position: relative;
+}
+#Container .AboutText .AboutDescr{
+	width: 370px;
+	height: 65px;
+	float: left;
+	margin-right: 30px;
+		margin-bottom: 50px;
+}
+#Container .AboutText .AboutDescr img{
+	float: left;
+}
+#Container .AboutText .P{
+	text-transform: uppercase;
+	color: white;
+}
+
+#Container .AboutText .MainText{
+	font-size: 50px;
+	text-align: center;
+	
+}
+#Container .About .PodText{
+	font-size: 18px;
+	text-align: center;
+	margin: 45px 0px;
+}
+#Container .About .Description{
+	font-size: 19px;
+	text-align: left;
+	margin-left: 70px;
+	margin-top: 10px;
+}
+#Container .AboutText .Buy{
+	font-size: 20px;
+	text-align: center;
+	padding: 22px 46px;
+	color: #e11111;
+	background-color: white;
+}
+
+#Container .AboutText .Buy:hover{
+	font-size: 20px;
+	text-align: center;
+	padding: 22px 46px;
+	color: white;
+	background-color:#e11111;
+}
+#Container .ForAdvantages{
+	background-image: url('/main/images/ldssascx.png');
+	height: 875px;
+	min-width: 1230px;
+	background-repeat: no-repeat;
+	background-position: center;
+}
+#Container .Advantages{
+	height: 875px;
+	width: 1230px;
+	margin: 0px auto;
+}
+#Container .Advantages .MainText{
+	color: black;
+	text-transform: uppercase;
+	font-size: 50px;
+	text-align: center;
+	padding-top: 100px;
+	padding-bottom: 50px;
+}
+#Container .red-line{
+	width: 150px;
+	height: 3px;
+	background-color: #e11111;
+	margin: 0px auto;
+	margin-bottom: 100px;
+}
+#Container .Advantages .AdvantagesBlock{
+	width: 370px;
+	height: 250px;
+	margin-bottom: 10px;
+	box-sizing: border-box;
+}
+#Container .Advantages .AdvantagesBlock center{
+	width: 128px;
+	height: 128px;
+	margin: 0px auto;
+	text-align: center;
+	border-radius: 128px;
+	background-color: #e11111;
+}
+#Container .Advantages .AdvantagesBlock img{
+	margin-top: 30px;
+	text-align: center;
+}
+#Container .Advantages .AdvantagesBlock .Description{
+	font-size: 25px;
+	text-align: center;
+	font-weight: bold;
+	margin: 15px 0px;
+	color: rgba(0,0,0,0.75);
+}
+#Container .Advantages .AdvantagesBlock p{
+	font-size: 17px;
+	text-align: center;
+	color: rgba(0,0,0,0.75);
+}
+
+#Container .ForFunctional{
+	background-image: url('/main/images/fwbfbfewfw.png');
+	min-height: 1011px;
+	min-width: 1230px;
+	background-repeat: repeat-y;
+	background-position: center;
+}
+#Container .Functional{
+	min-height: 1011px;
+	width: 1230px;
+	margin: 0px auto;
+}
+#Container .Functional .MainText{
+	color: black;
+	text-transform: uppercase;
+	font-size: 50px;
+	text-align: center;
+	padding-top: 100px;
+	padding-bottom: 50px;
+}
+#Container .Functional .FunctionalBlock{
+	width: 1170px;
+	background-color: #f4f4f4;
+	margin-bottom: 20px;
+	display: flex;
+}
+#Container .Functional .OpenClose{
+	cursor: pointer;
+}
+#Container .Functional .FunctionalBlock .Numeric{
+	width: 100px;
+	background-color: #dadada;
+	text-align: center;
+	font-size: 40px;
+	line-height: 100px;
+	color: black;
+}
+#Container .Functional .FunctionalBlock .MainDesc{
+	text-align: left;
+	font-size: 40px;
+	line-height: 101px;
+	color: black;
+	margin-left: 30px; 
+}
+#Container .Functional .FunctionalBlock .MainDesc .HideDesk p{
+	text-align: left;
+	font-size: 20px;
+	color: black;
+	line-height: initial;
+	padding-right: 70px;
+}
+#Container .Functional .FunctionalBlock .MainDesc .HideDesk img{
+	width: 318px;
+	height: 184px;
+	margin: 35px 0px;
+	background-color: #e11111;
+	border: 0px;
+}
+#Container .Functional .FunctionalBlock .HideDesk{
+	display: none;
+	margin-bottom: 15px;
+}
+#Container .Functional .FunctionalBlock span{
+	font-size: 40px;
+	margin-right: 20px;
+	color: black;
+	text-align: right;
+	flex: auto;
+	line-height: 100px;
+}
+#Container .ForAnticheat{
+	background-image: url('/main/images/1421671954.png');
+	height: 650px;
+	min-width: 1230px;
+	background-repeat: no-repeat;
+	background-position: center;
+}
+#Container .Anticheat{
+	height: 650px;
+	width: 1230px;
+	margin: 0px auto;
+}
+#Container .forAnti{
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	justify-content: space-between;
+	margin-left: 150px;
+}
+#Container .Anticheat .MainText{
+	color: white;
+	text-transform: uppercase;
+	font-size: 50px;
+	text-align: center;
+	padding-top: 100px;
+	padding-bottom: 50px;
+}
+#Container .Anticheat .AnticheatBlock{
+	height: 33px;
+	width: 310px;
+	margin: 10px 0px;
+	color: white;
+}
+#Container .Anticheat .AnticheatBlock img{
+	float: left;
+}
+#Container .Anticheat .AnticheatBlock span{
+	float: left;
+	line-height: 35px;
+	margin-left: 5px;
+	font-size: 25px;
+	font-weight: bold;
+	color: rgba(255, 255, 255, 0.95);
+}
+
+#Container .ForReviews{
+	background-image: url('/main/images/befsva.png');
+	height: 700px;
+	min-width: 1230px;
+	background-repeat: no-repeat;
+	background-position: center;
+}
+#Container .Reviews{
+	height: 700px;
+	width: 1230px;
+	margin: 0px auto;
+}
+#Container .Reviews .MainText{
+	color: white;
+	text-transform: uppercase;
+	font-size: 50px;
+	text-align: center;
+	padding-top: 100px;
+	padding-bottom: 50px;
+}
+#Container .Reviews .ReviewsBlock{
+	width: 270px;
+	margin-left: 15px;
+	height: 150px;
+	margin-bottom: 30px;
+	margin-right: 15px;
+	background-color: red;
+}
+#Container .ForFooter{
+	background-color: #f4f4f4;
+	height: 115px;
+	min-width: 1230px;
+}
+#Container .Footer{
+	height: 115px;
+	width: 1230px;
+	margin: 0px auto;
+}
+#Container .Footer .FooterBlock{
+	width: 270px;
+	height:60px;
+	font-size: 20px;
+	font-weight: bold;
+	margin-right: 30px;
+	margin-top: 30px;
+}
+#Container .Footer .CallMe{
+	width: 270px;
+	height:60px;
+	font-size: 20px;
+	font-weight: bold;
+	margin-top: 30px;
+	text-align: right;
+}
+#Container .Footer .CallMe a{
+	float: right;
+	margin: 0px 5px;
+}
+
+#Container .Footer .FooterBlock a{
+	font-size: 18px;
+	font-weight: normal;
+	color: gray;
+	text-decoration: underline;
+}
+
+
+.forest{
+	background: url('/main/images/forest.jpg');
+	position:  fixed;
+	overflow:  hidden;
+	height:  100%;
+	width:  100%;
+	background-repeat:  no-repeat;
+	display:  flex;
+	justify-content:  center;
+	background-size:  cover;
+	background-attachment:  fixed;
+}
+.form .Subject{
+	font-size:  30px;
+	text-align:  center;
+}
+.form .navbar{font-size:  20px;padding: 15px 0px;}
+.form .navbar a{padding:  5px 0px;margin:  0px 15px;}
+.form .navbar a.active, .form .navbar a:hover{border-bottom: 1px solid;}
+.form .Block form{display:  flex;flex-direction: column;}
+.form .Block form input{border:0px;border-left: 2px solid white;padding: 5px 10px;font-size:  20px;background: rgba(255, 255, 255, 0);color:  white;box-sizing: border-box;}
+.form .Block form input:hover, .form .Block form input:active, .form .Block form input:focus, .form .Block form input.active{background: rgb(255, 255, 255);color:  black;border-left: 2px solid #e74c3c;}
+.form .Block form .submit{}
+
+.Container{ 
+	color:  white;
+	margin: auto;
+	background: rgba(0, 0, 0, 0.75);
+	padding: 50px 25px;
+}
+.Container .Subject{
+	font-size:  30px;
+	text-align:  center;
+}
+.Container .navbar{font-size:  20px;padding: 15px 0px;}
+.Container .navbar a{padding:  5px 0px;margin:  0px 15px;}
+.Container .navbar a.active, .form .navbar a:hover{border-bottom: 1px solid;}
+
+.Container .information{}
+.Container .information p{display:  flex;justify-content:  space-between;padding:  5px 10px;border-bottom: 1px dashed rgba(255, 255, 255, 0.1);}
+.Container .information p:hover{ background-color: white;color: black; }
+
+.d-block{ display: block; }
+.d-none{ display: none; }
+.fl-left{float: left;}
+.fl-right{float: right;}

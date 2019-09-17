@@ -1,0 +1,47 @@
+body{
+    padding-top: 0;
+}
+body > .sidebar{
+    top: 0;
+}
+
+.main.radar{
+    display: flex;
+    align-content: center;
+    justify-content: center;
+}
+    .main.radar .navigation{
+        width: 100px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        margin-left: 25px;
+    }
+        .main.radar .navigation ul{
+            list-style-type: none;
+            display: grid;
+            font-size: 35px;
+            margin: 0;
+            padding: 0;
+        }
+        .main.radar .navigation ul li{
+            width: 100px;
+            height: 100px;
+            background-color: rgba(0,0,0,.1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+        }
+        .main.radar .navigation ul li:hover, .main.radar .navigation ul li.active{
+            background-color: #e11111;
+        }
+
+    .main.radar .canvas{
+        transform: scale(0.9);
+        overflow: hidden;
+    }
+    .main.radar .canvas canvas{
+        transition: .5s all;
+    }
